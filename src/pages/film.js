@@ -1,8 +1,12 @@
 import React from "react"
 
-export default () => (
-  <>
+import Layout from "../components/Layout"
+
+const FilmPage = () => (
+  <Layout>
     <h1>Film</h1>
     <p>Details about film work</p>
-  </>
+  </Layout>
 )
+
+export default FilmPage
