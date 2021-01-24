@@ -3,6 +3,8 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
 
+import logo from "../../static/rs-films-logo.png"
+
 const NavLink = styled(Link)`
   color: #eee;
   font-size: 1.2rem;
@@ -24,14 +26,6 @@ const HoverLink = styled(NavLink)`
   }
 `
 
-const Logo = styled.div`
-  background-color: #fff;
-  width: 80px;
-  height: 80px;
-  display: inline-block;
-  margin: 0 0.5rem 0 0;
-`
-
 const Header = () => (
   <header
     css={css`
@@ -41,10 +35,19 @@ const Header = () => (
       max-width: 90%;
       margin: auto;
       align-items: flex-end;
+      padding-top: 24px;
     `}
   >
     <NavLink to="/">
-      <Logo />
+      {/* Replace with SVG */}
+      <img
+        alt='logo'
+        css={css`
+          margin: 0 0.5rem 0 0;
+        `}
+        height={80}
+        src={logo}
+        />
       FILM & PHOTOGRAPHY
     </NavLink>
     <nav
