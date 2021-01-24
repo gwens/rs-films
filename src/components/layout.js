@@ -17,10 +17,11 @@ const Layout = ({ children }) => (
         html,
         body {
           margin: 0;
-          color: #555;
+          color: #eee;
+          background-color: #222;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe-UI", Roboto,
             Helvetica, Arial, sans-serif;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 1.4;
 
           // remove margin for the gatsby div
@@ -34,12 +35,19 @@ const Layout = ({ children }) => (
           h4,
           h5,
           h6 {
-            color: #222;
+            color: #eee;
             line-height: 1.1;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: normal;
 
             + * {
               margin-top: 0.5rem;
             }
+          }
+
+          p {
+            text-transform: uppercase;
           }
 
           strong {
