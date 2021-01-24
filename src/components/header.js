@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import React from "react"
+import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
 const NavLink = styled(Link)`
   color: #eee;
@@ -46,15 +46,15 @@ const Nav = styled.nav`
 const Header = () => (
   <HeaderEl>
     <NavLink to="/">
-      <Logo/>
+      <Logo />
       FILM & PHOTOGRAPHY
     </NavLink>
     <Nav>
-      <HoverLink to='/'>HOME</HoverLink>
-      <HoverLink to='/film'>FILM</HoverLink>
-      <HoverLink to='/photography'>PHOTOGRAPHY</HoverLink>
-      <HoverLink to='/livestreaming'>LIVESTREAMING</HoverLink>
-      <HoverLink to='/contact'>CONTACT</HoverLink>
+      <HoverLink to="/">HOME</HoverLink>
+      <HoverLink to="/film">FILM</HoverLink>
+      <HoverLink to="/photography">PHOTOGRAPHY</HoverLink>
+      <HoverLink to="/livestreaming">LIVESTREAMING</HoverLink>
+      <HoverLink to="/contact">CONTACT</HoverLink>
     </Nav>
   </HeaderEl>
 )

@@ -2,12 +2,15 @@ import React from "react"
 
 import Layout from "../components/layout"
 import Header from "../components/header"
+import { Section } from "../styles/section"
 
 const ContactPage = () => (
   <Layout>
-    <Header/>
-    <h1>Contact</h1>
-    <p>Contact me at...</p>
+    <Header />
+    <Section>
+      <h1>Contact</h1>
+      <p>Contact me at...</p>
+    </Section>
   </Layout>
 )
 
