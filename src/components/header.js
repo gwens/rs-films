@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { css } from "@emotion/react"
 import { Link } from "gatsby"
 
 const NavLink = styled(Link)`
@@ -17,18 +18,10 @@ const NavLink = styled(Link)`
 `
 
 const HoverLink = styled(NavLink)`
-  &:hover {
+  &:hover,
+  &.current-page {
     border-bottom: 2px solid #eee;
   }
-`
-
-const HeaderEl = styled.header`
-  background-color: #222;
-  display: flex;
-  justify-content: space-between;
-  max-width: 90%;
-  margin: auto;
-  align-items: flex-end;
 `
 
 const Logo = styled.div`
@@ -39,24 +32,43 @@ const Logo = styled.div`
   margin: 0 0.5rem 0 0;
 `
 
-const Nav = styled.nav`
-  margin-top: 0;
-`
-
 const Header = () => (
-  <HeaderEl>
+  <header
+    css={css`
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      max-width: 90%;
+      margin: auto;
+      align-items: flex-end;
+    `}
+  >
     <NavLink to="/">
       <Logo />
       FILM & PHOTOGRAPHY
     </NavLink>
-    <Nav>
-      <HoverLink to="/">HOME</HoverLink>
-      <HoverLink to="/film">FILM</HoverLink>
-      <HoverLink to="/photography">PHOTOGRAPHY</HoverLink>
-      <HoverLink to="/livestreaming">LIVESTREAMING</HoverLink>
-      <HoverLink to="/contact">CONTACT</HoverLink>
-    </Nav>
-  </HeaderEl>
+    <nav
+      css={css`
+        margin-top: 0;
+      `}
+    >
+      <HoverLink to="/" activeClassName="current-page">
+        HOME
+      </HoverLink>
+      <HoverLink to="/film" activeClassName="current-page">
+        FILM
+      </HoverLink>
+      <HoverLink to="/photography" activeClassName="current-page">
+        PHOTOGRAPHY
+      </HoverLink>
+      <HoverLink to="/livestreaming" activeClassName="current-page">
+        LIVESTREAMING
+      </HoverLink>
+      <HoverLink to="/contact" activeClassName="current-page">
+        CONTACT
+      </HoverLink>
+    </nav>
+  </header>
 )
 
 export default Header
