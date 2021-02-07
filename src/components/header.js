@@ -41,13 +41,13 @@ const Header = () => (
     <NavLink to="/">
       {/* Replace with SVG */}
       <img
-        alt='logo'
+        alt="logo"
         css={css`
           margin: 0 0.5rem 0 0;
         `}
         height={80}
         src={logo}
-        />
+      />
       FILM & PHOTOGRAPHY
     </NavLink>
     <nav
