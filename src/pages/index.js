@@ -1,19 +1,24 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import { Section } from "../styles/section"
+import useContentfulPage from "../hooks/use-contentful-page"
 
-const HomePage = () => (
-  <Layout>
-    <Section>
-      <h1>What I Do</h1>
-      <p>
-        Looking for dynamic, creative content for your website or social media?
-        Look no further. My video and photography services are here waiting to
-        take your online presence to the next level.
-      </p>
-    </Section>
-  </Layout>
-)
+const HomePage = () => {
+  const sections = useContentfulPage()
+
+  return (
+    <Layout>
+      {sections.map(({ title, textContent, image }) => (
+        <Section>
+          <h1>{title}</h1>
+          <p>{textContent}</p>
+          <Img fluid={image.fluid} key={image.title} alt={image.description} />
+        </Section>
+      ))}
+    </Layout>
+  )
+}
 
 export default HomePage
