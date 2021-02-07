@@ -2,6 +2,7 @@ import React from "react"
 import { Global, css } from "@emotion/react"
 import Helmet from "react-helmet"
 
+import Header from "./header"
 import useSiteMetadata from "../hooks/use-sitemetadata"
 
 const Layout = ({ children }) => {
@@ -70,7 +71,7 @@ const Layout = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <header></header>
+      <Header />
       <main>{children}</main>
     </>
   )

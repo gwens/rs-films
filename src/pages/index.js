@@ -1,12 +1,10 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Header from "../components/header"
 import { Section } from "../styles/section"
 
 const HomePage = () => (
   <Layout>
-    <Header />
     <Section>
       <h1>What I Do</h1>
       <p>
