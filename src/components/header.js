@@ -58,16 +58,16 @@ const Header = () => (
       <HoverLink to="/" activeClassName="current-page">
         HOME
       </HoverLink>
-      <HoverLink to="/film" activeClassName="current-page">
+      <HoverLink to="/film/" activeClassName="current-page">
         FILM
       </HoverLink>
-      <HoverLink to="/photography" activeClassName="current-page">
+      <HoverLink to="/photography/" activeClassName="current-page">
         PHOTOGRAPHY
       </HoverLink>
-      <HoverLink to="/livestreaming" activeClassName="current-page">
+      <HoverLink to="/livestreaming/" activeClassName="current-page">
         LIVESTREAMING
       </HoverLink>
-      <HoverLink to="/contact" activeClassName="current-page">
+      <HoverLink to="/contact/" activeClassName="current-page">
         CONTACT
       </HoverLink>
     </nav>
