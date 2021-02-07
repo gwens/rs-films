@@ -23,11 +23,13 @@ const useContentfulPage = () => {
     }
   `)
 
-  return data.allContentfulSection.nodes.map(node => ({
-    title: node.title,
-    textContent: node.textContent.textContent,
-    image: node.image.photo,
-  }))
+  return data.allContentfulSection.nodes
+    .map(node => ({
+      title: node.title,
+      textContent: node.textContent.textContent,
+      image: node.image.photo,
+    }))
+    .reverse()
 }
 
 export default useContentfulPage

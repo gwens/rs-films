@@ -1,14 +1,11 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { Section } from "../styles/section"
+import Section from "../components/section"
 
 const PhotographyPage = () => (
   <Layout>
-    <Section>
-      <h1>Photography</h1>
-      <p>Photo gallery</p>
-    </Section>
+    <Section title="Photography" textContent="Photo Gallery" />
   </Layout>
 )
 

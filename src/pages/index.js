@@ -1,8 +1,8 @@
 import React from "react"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import { Section } from "../styles/section"
+import Section from "../components/section"
+
 import useContentfulPage from "../hooks/use-contentful-page"
 
 const HomePage = () => {
@@ -11,11 +11,7 @@ const HomePage = () => {
   return (
     <Layout>
       {sections.map(({ title, textContent, image }) => (
-        <Section>
-          <h1>{title}</h1>
-          <p>{textContent}</p>
-          <Img fluid={image.fluid} key={image.title} alt={image.description} />
-        </Section>
+        <Section title={title} textContent={textContent} image={image} />
       ))}
     </Layout>
   )
