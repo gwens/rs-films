@@ -1,14 +1,11 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { Section } from "../styles/section"
+import Section from "../components/section"
 
 const ContactPage = () => (
   <Layout>
-    <Section>
-      <h1>Contact</h1>
-      <p>Contact me at...</p>
-    </Section>
+    <Section title="Contact" textContent="Contact me at..." />
   </Layout>
 )
 

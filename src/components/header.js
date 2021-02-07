@@ -29,7 +29,7 @@ const HoverLink = styled(NavLink)`
 const Header = () => (
   <header
     css={css`
-      background-color: #222;
+      background-color: #111;
       display: flex;
       justify-content: space-between;
       max-width: 90%;
