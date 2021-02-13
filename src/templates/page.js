@@ -14,7 +14,7 @@ const Page = ({ data }) => {
           key={id}
           title={title}
           textContent={textContent && textContent.textContent}
-          image={image && image.photo}
+          image={image}
         />
       ))}
     </Layout>
@@ -36,8 +36,8 @@ export const query = graphql`
               ...GatsbyContentfulFluid
             }
             title
-            description
           }
+          altText
         }
       }
     }

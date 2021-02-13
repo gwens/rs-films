@@ -25,9 +25,7 @@ const Section = ({ title, textContent, image }) => (
         {textContent}
       </p>
     )}
-    {image && (
-      <Img fluid={image.fluid} key={image.title} alt={image.description} />
-    )}
+    {image && <Img fluid={image.photo.fluid} alt={image.altText} />}
   </section>
 )
 
