@@ -4,6 +4,7 @@ import { css } from "@emotion/react"
 import { Link } from "gatsby"
 
 import logo from "../../static/rs-films-logo.png"
+import useMainNav from "../hooks/use-main-nav"
 
 const NavLink = styled(Link)`
   color: #eee;
@@ -13,10 +14,7 @@ const NavLink = styled(Link)`
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
   text-decoration: none;
-
-  > {
-    text-transform: uppercase;
-  }
+  text-transform: uppercase;
 `
 
 const HoverLink = styled(NavLink)`
@@ -26,52 +24,46 @@ const HoverLink = styled(NavLink)`
   }
 `
 
-const Header = () => (
-  <header
-    css={css`
-      background-color: #111;
-      display: flex;
-      justify-content: space-between;
-      max-width: 90%;
-      margin: auto;
-      align-items: flex-end;
-      padding-top: 24px;
-    `}
-  >
-    <NavLink to="/">
-      {/* Replace with SVG */}
-      <img
-        alt="logo"
-        css={css`
-          margin: 0 0.5rem 0 0;
-        `}
-        height={80}
-        src={logo}
-      />
-      FILM & PHOTOGRAPHY
-    </NavLink>
-    <nav
+const Header = () => {
+  const links = useMainNav()
+  console.log(JSON.stringify(links, null, 2))
+  return (
+    <header
       css={css`
-        margin-top: 0;
+        background-color: #111;
+        display: flex;
+        justify-content: space-between;
+        max-width: 90%;
+        margin: auto;
+        align-items: flex-end;
+        padding-top: 24px;
       `}
     >
-      <HoverLink to="/" activeClassName="current-page">
-        HOME
-      </HoverLink>
-      <HoverLink to="/film/" activeClassName="current-page">
-        FILM
-      </HoverLink>
-      <HoverLink to="/photography/" activeClassName="current-page">
-        PHOTOGRAPHY
-      </HoverLink>
-      <HoverLink to="/livestreaming/" activeClassName="current-page">
-        LIVESTREAMING
-      </HoverLink>
-      <HoverLink to="/contact/" activeClassName="current-page">
-        CONTACT
-      </HoverLink>
-    </nav>
-  </header>
-)
+      <NavLink to="/">
+        {/* Replace with SVG */}
+        <img
+          alt="logo"
+          css={css`
+            margin: 0 0.5rem 0 0;
+          `}
+          height={80}
+          src={logo}
+        />
+        Film & Photography
+      </NavLink>
+      <nav
+        css={css`
+          margin-top: 0;
+        `}
+      >
+        {links.map(({ slug, navText }) => (
+          <HoverLink key={slug} to={slug} activeClassName="current-page">
+            {navText}
+          </HoverLink>
+        ))}
+      </nav>
+    </header>
+  )
+}
 
 export default Header
