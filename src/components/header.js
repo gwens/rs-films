@@ -26,7 +26,6 @@ const HoverLink = styled(NavLink)`
 
 const Header = () => {
   const links = useMainNav()
-  console.log(JSON.stringify(links, null, 2))
   return (
     <header
       css={css`
