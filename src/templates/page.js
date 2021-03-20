@@ -9,12 +9,13 @@ const Page = ({ data }) => {
 
   return (
     <Layout>
-      {sections.map(({ id, title, textContent, image }) => (
+      {sections.map(({ id, title, textContent, image, photoGallery }) => (
         <Section
           key={id}
           title={title}
           textContent={textContent && textContent.textContent}
           image={image}
+          photoGallery={photoGallery}
         />
       ))}
     </Layout>
@@ -38,6 +39,17 @@ export const query = graphql`
             title
           }
           altText
+        }
+        photoGallery {
+          photos {
+            photo {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+              title
+            }
+            altText
+          }
         }
       }
     }
