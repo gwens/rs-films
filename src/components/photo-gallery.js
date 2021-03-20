@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 const Container = styled.div`
   padding: 24px;
   display: flex;
-  height: 500px;
+  max-height: 100%;
   justify-content: space-between;
   align-items: center;
 `
