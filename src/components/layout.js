@@ -3,6 +3,7 @@ import { Global, css } from "@emotion/react"
 import Helmet from "react-helmet"
 
 import Header from "./header"
+import Footer from "./footer"
 import useSiteMetadata from "../hooks/use-sitemetadata"
 
 const Layout = ({ children }) => {
@@ -73,6 +74,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
