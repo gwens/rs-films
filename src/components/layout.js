@@ -24,12 +24,14 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
+            padding: 0;
             color: #eee;
             background-color: #111;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe-UI", Roboto,
               Helvetica, Arial, sans-serif;
             font-size: 16px;
             line-height: 1.4;
+            overflow: auto;
 
             // remove margin for the gatsby div
             > div {
@@ -63,6 +65,18 @@ const Layout = ({ children }) => {
 
             li {
               margin-top: 0.25rem;
+            }
+
+            iframe {
+              margin: 0;
+              padding: 0;
+              height: 100%;
+              border: none;
+              display: block;
+              width: 100%;
+              border: none;
+              overflow-y: auto;
+              overflow-x: hidden;
             }
           }
         `}

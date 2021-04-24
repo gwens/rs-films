@@ -3,21 +3,26 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Section from "../components/section"
+import FullScreenVideo from "../components/full-screen-video"
 
 const Page = ({ data }) => {
   const { sections } = data.contentfulPage
 
   return (
     <Layout>
-      {sections.map(({ id, title, textContent, image, photoGallery }) => (
-        <Section
-          key={id}
-          title={title}
-          textContent={textContent && textContent.textContent}
-          image={image}
-          photoGallery={photoGallery}
-        />
-      ))}
+      <FullScreenVideo />
+      {sections.map(
+        ({ id, title, textContent, image, photoGallery, video }) => (
+          <Section
+            key={id}
+            title={title}
+            textContent={textContent && textContent.textContent}
+            image={image}
+            photoGallery={photoGallery}
+            video={video}
+          />
+        )
+      )}
     </Layout>
   )
 }
