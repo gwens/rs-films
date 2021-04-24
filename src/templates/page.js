@@ -3,23 +3,22 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Section from "../components/section"
-import FullScreenVideo from "../components/full-screen-video"
 
 const Page = ({ data }) => {
   const { sections } = data.contentfulPage
+  console.log("SECTIONS", sections)
 
   return (
     <Layout>
-      <FullScreenVideo />
       {sections.map(
-        ({ id, title, textContent, image, photoGallery, video }) => (
+        ({ id, title, textContent, image, photoGallery, fullScreenVideo }) => (
           <Section
             key={id}
             title={title}
             textContent={textContent && textContent.textContent}
             image={image}
             photoGallery={photoGallery}
-            video={video}
+            fullScreenVideo={fullScreenVideo}
           />
         )
       )}
@@ -55,6 +54,10 @@ export const query = graphql`
             }
             altText
           }
+        }
+        fullScreenVideo {
+          youtubeId
+          aspectRatio
         }
       }
     }

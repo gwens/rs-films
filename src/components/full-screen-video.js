@@ -1,16 +1,16 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-const FullScreenVideo = () => (
+const FullScreenVideo = ({ id, aspectRatio }) => (
   <div
     css={css`
-      height: 56.25vw;
+      height: calc(100vw * ${1 / aspectRatio});
       width: 100vw;
     `}
   >
     <iframe
       width="100%"
-      src="https://www.youtube.com/embed/6UIdfBkAamg?rel=0&autoplay=1&controls=0&playlist=6UIdfBkAamg&loop=1&modestbranding=1&mute=1"
+      src={`https://www.youtube.com/embed/${id}?rel=0&autoplay=1&controls=0&playlist=${id}&loop=1&modestbranding=1&mute=1`}
       title="YouTube video player"
       frameborder="0"
       marginheight="0"

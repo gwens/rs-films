@@ -3,8 +3,15 @@ import { css } from "@emotion/react"
 import Img from "gatsby-image"
 
 import PhotoGallery from "./photo-gallery"
+import FullScreenVideo from "./full-screen-video"
 
-const Section = ({ title, textContent, image, photoGallery }) => (
+const Section = ({
+  title,
+  textContent,
+  image,
+  photoGallery,
+  fullScreenVideo,
+}) => (
   <section>
     {title && (
       <h1
@@ -30,6 +37,12 @@ const Section = ({ title, textContent, image, photoGallery }) => (
     {image && <Img fluid={image.photo.fluid} alt={image.altText} />}
     {photoGallery && (
       <PhotoGallery images={photoGallery ? photoGallery.photos : []} />
+    )}
+    {fullScreenVideo && (
+      <FullScreenVideo
+        id={fullScreenVideo.youtubeId}
+        aspectRatio={fullScreenVideo.aspectRatio}
+      />
     )}
   </section>
 )
